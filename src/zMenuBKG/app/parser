@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# zMenuBKG - by Zorge.R
+# motofan.ru - 2010 (C)
+# ZOG-ZOG dude
+
+if [ -d /ezxlocal/zmod ];then cp "$2" /ezxlocal/zmod/fl_mm_bg.png;else mkdir /ezxlocal/zmod;cp "$2" /ezxlocal/zmod/fl_mm_bg.png;fi
+
+if [ -f /ezxlocal/zmod/fl_mm_bg.png ]
+	then
+		mount -o bind /ezxlocal/zmod/fl_mm_bg.png /usr/SYSqtapp/xe/resource/skins/default/media/images/fl_mm_bg.png
+		kill `pidof flowplayer`
+	else
+		echo "WTF err"
+fi
+
+showQ "All done!" "Menu Background changing done" 2
